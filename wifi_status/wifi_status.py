@@ -12,16 +12,33 @@ async def main(connection):
     component = iterm2.StatusBarComponent(
         short_description="Wifi status",
         detailed_description="Wifi status bar components",
-        knobs=knobs,
-        exemplar="",
+        knobs=[],
+        exemplar="wifi  | ▁▂▄ | ",
+        update_cadence=5,
         identifier="take.wifi"
     )
 
     @iterm2.StatusBarRPC
-    async def coro(knobs):
+    async def wifi_status(knobs):
+        signal = ""
+
         output = subprocess.check_output(args=[airport_path, "-I"]).decode()
+        info = re.findall("[\s]*(agrCtlRSSI|state|lastTxRate|SSID):[\s]([!-~]*)", output)
+        rssi = info[0][1]
+        rate = info[2][1]
+        ssid = info[4][1]
 
-        #info = re.match("^ *(agrCtlRSSI|state|lastTxRate|SSID):", contents)
+        if int(rate) == 0:
+            signal = "🙅‍♂️"
+            status = "{0}".format(signal)
+        else:
+            _rssi = (5 - int(rssi) / -20)
 
+            for r in range(int(_rssi)):
+                signal = signal + signals[r]
+            status = "{0}  | {1} |".format(ssid, signal)
+        return status
 
-iterm2.run_until_complete(main)
+    await component.async_register(connection, wifi_status)
+
+iterm2.run_forever(main)
