@@ -12,6 +12,7 @@ $ cd ${HOME}/Library/Application\ Support/iTerm2/Scripts
 $ mkdir -p AutoLaunch && cd AutoLaunch
 $ ln -s /path/to/wifi_status/wifi_status.py .
 ```
+With iTerm2 running and selected go to **Scripts > AutoLaunch** and select the scripts you linked or copied into the AutoLaunch folder. You may be prompted to download the Python runtime.
 
 # document
 [About status bar](https://www.iterm2.com/3.3/documentation-status-bar.html)
