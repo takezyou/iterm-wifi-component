@@ -14,7 +14,7 @@ $ ln -s /path/to/wifi_status/wifi_status.py .
 ```
 With iTerm2 running and selected go to **Scripts > AutoLaunch** and select the scripts you linked or copied into the AutoLaunch folder. You may be prompted to download the Python runtime.
 # thanks
-This idea comes from [wifi](https://github.com/b4b4r07/dotfiles/blob/master/.tmux/bin/wifi)
+This idea comes from [wifi](https://github.com/b4b4r07/dotfiles/blob/master/.tmux/bin/wifi).
 
 # document
 [About status bar](https://www.iterm2.com/3.3/documentation-status-bar.html)
