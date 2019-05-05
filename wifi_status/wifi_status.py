@@ -2,6 +2,7 @@
 
 import iterm2
 import subprocess
+import math
 import re
 
 airport_path = "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
@@ -34,7 +35,7 @@ async def main(connection):
         else:
             _rssi = (5 - int(rssi) / -20)
 
-            for r in range(int(_rssi)):
+            for r in range(math.ceil(_rssi)):
                 signal = signal + signals[r]
             status = "{0}  | {1} |".format(ssid, signal)
         return status
