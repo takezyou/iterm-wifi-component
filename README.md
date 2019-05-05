@@ -1,7 +1,7 @@
 # wifi_status
 wifi status with iTerm2
 
-[wifi_status](https://github.com/takezyou/wifi_status/blob/master/screenshots/wifi_status.png)
+![wifi_status](https://github.com/takezyou/wifi_status/blob/master/screenshots/wifi_status.png)
 
 # installation
 If you know a good way please do a pull request.
