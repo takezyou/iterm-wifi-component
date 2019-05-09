@@ -7,7 +7,7 @@ wifi status with iTerm2
 If you know a good way please do a pull request.
 
 ```
-$ git clone git@github.com:takezyou/wifi_status.git
+$ git clone git@github.com:takezyou/iterm-wifi-component.git
 $ cd ${HOME}/Library/Application\ Support/iTerm2/Scripts
 $ mkdir -p AutoLaunch && cd AutoLaunch
 $ ln -s /path/to/wifi_status/wifi_status.py .
